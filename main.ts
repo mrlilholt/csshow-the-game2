@@ -900,7 +900,7 @@ function blastOff () {
     true
     )
     mySprite.setPosition(11, 15)
-    enemeanie.follow(mySprite, 50)
+    enemeanie.follow(mySprite, 20)
     controller.player1.moveSprite(mySprite)
     statusSetup()
 }
@@ -1056,7 +1056,9 @@ function GameBegin () {
     500,
     true
     )
-    game.showLongText("I'm a dancing computer", DialogLayout.Bottom)
+    game.showLongText("WELCOME TO THE CS SHOW!", DialogLayout.Bottom)
+    game.showLongText("Get ready for your HOST!", DialogLayout.Bottom)
+    game.showLongText("MR. LILHOLT", DialogLayout.Bottom)
     blastOff()
 }
 scene.onHitTile(SpriteKind.Player, 6, function (sprite) {
@@ -1073,5 +1075,7 @@ let enemeanie: Sprite = null
 let CS_Show_logo: Sprite = null
 let mySprite: Sprite = null
 let statusbar: StatusBarSprite = null
+let lilholt22 = null
+let lilholt2 = null
 startScreen()
 GameBegin()
