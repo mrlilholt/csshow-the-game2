@@ -1108,7 +1108,5 @@ let enemeanie: Sprite = null
 let CS_Show_logo: Sprite = null
 let mySprite: Sprite = null
 let statusbar: StatusBarSprite = null
-let lilholt22 = null
-let lilholt2 = null
 startScreen()
 GameBegin()
