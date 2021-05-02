@@ -54,6 +54,18 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     true
     )
 })
+function level3 () {
+    scene.setTileMap(img`
+        f f f f f f f f f f 
+        f f f f f f f f f f 
+        f f f f f f f f f f 
+        f f f f f f f f f f 
+        3 3 3 3 3 3 3 3 3 3 
+        9 9 9 9 9 9 9 9 9 9 
+        9 9 9 9 9 9 9 9 9 9 
+        9 9 9 9 9 9 9 9 9 9 
+        `)
+}
 function level2 () {
     scene.setBackgroundImage(img`
         ................................................................................................................................................................
@@ -214,6 +226,24 @@ function level2 () {
         ............................................................
         `)
     scene.cameraFollowSprite(mySprite)
+    scene.setTile(4, img`
+        . . . e e e e e e e e e e e . . 
+        . . . e e e e e e e e e e e . . 
+        . . . e e d d d d d d d e e . . 
+        . . . e e d d d d d d d e e . . 
+        . . . e e d d d d d d d e e . . 
+        . . . e e d d d d d d d e e . . 
+        . . . e e d d d d d d d e e . . 
+        . . . e e f f d d d d d e e . . 
+        . . . e e f f d d d d d e e . . 
+        . . . e e d d d d d d d e e . . 
+        . . . e e d d d d d d d e e . . 
+        . . . e e d d d d d d d e e . . 
+        . . . e e d d d d d d d e e . . 
+        . . . e e d d d d d d d e e . . 
+        . . . e e e e e e e e e e e . . 
+        . . . e e e e e e e e e e e . . 
+        `, true)
 }
 function startScreen () {
     CS_Show_logo = sprites.create(img`
@@ -404,6 +434,9 @@ function readyForNextLefelTitleScreen () {
     game.splash("wowza!  You avoided getting spilled on.  Are you ready for the next thing?")
     level2()
 }
+scene.onHitTile(SpriteKind.Player, 4, function (sprite) {
+    level3()
+})
 function blastOff () {
     scene.cameraFollowSprite(mySprite)
     scene.setBackgroundImage(img`
